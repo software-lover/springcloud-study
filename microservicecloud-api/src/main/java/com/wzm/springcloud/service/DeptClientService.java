@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * @description 部门服务接口
- * @author wangzhimin
+ * @author wzm
  * @date 2020-05-23 17:50
  */
 //@FeignClient("MICROSERVICECLOUD-DEPT")

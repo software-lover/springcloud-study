@@ -8,7 +8,7 @@ import org.springframework.cloud.netflix.ribbon.RibbonClient;
 
 /**
  * @description
- * @author wangzhimin
+ * @author wzm
  * @date 2020-05-18 22:47
  * @since
  */

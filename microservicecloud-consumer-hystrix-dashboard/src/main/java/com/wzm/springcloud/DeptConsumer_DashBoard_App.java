@@ -6,7 +6,7 @@ import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboar
 
 /**
  * @description
- * @author wangzhimin
+ * @author wzm
  * @date 2020-05-23 22:06
  * @since
  */

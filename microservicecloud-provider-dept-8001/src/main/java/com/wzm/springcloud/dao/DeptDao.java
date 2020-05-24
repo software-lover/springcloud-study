@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * @description 部门dao
- * @author wangzhimin
+ * @author wzm
  * @date 2020-05-18 20:47
  */
 @Mapper

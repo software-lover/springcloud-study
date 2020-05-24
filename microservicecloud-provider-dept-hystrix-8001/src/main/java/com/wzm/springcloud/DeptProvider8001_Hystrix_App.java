@@ -9,7 +9,7 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 
 /**
  * @description
- * @author wangzhimin
+ * @author wzm
  * @date 2020-05-18 22:06
  * @since
  */

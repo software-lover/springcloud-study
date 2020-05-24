@@ -6,7 +6,7 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
  * @description
- * @author wangzhimin
+ * @author wzm
  * @date 2020-05-18 21:53
  * @since
  */

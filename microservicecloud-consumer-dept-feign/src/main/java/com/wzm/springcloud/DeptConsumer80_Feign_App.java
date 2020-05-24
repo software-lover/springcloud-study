@@ -7,7 +7,7 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 
 /**
  * @description
- * @author wangzhimin
+ * @author wzm
  * @date 2020-05-18 22:47
  * @since
  */

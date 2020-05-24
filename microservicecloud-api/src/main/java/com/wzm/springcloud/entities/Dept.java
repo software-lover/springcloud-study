@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 /**
  * @description 部门
- * @author wangzhimin
+ * @author wzm
  * @date 2020-05-17 20:47
  */
 @AllArgsConstructor

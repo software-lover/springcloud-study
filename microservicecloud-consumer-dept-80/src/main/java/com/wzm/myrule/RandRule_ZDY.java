@@ -10,7 +10,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * @description 自定义负载均衡算法：轮询算法，但是每台机器调用5次后再轮询下一台机器
- * @author wangzhimin
+ * @author wzm
  * @date 2020-05-23 12:49
  */
 public class RandRule_ZDY extends AbstractLoadBalancerRule {
