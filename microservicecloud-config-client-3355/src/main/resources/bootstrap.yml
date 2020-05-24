@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    config:
+      name: microservicecloud-config-client #需要从github上读取的资源文件名称，注意没有yml后缀名
+      profile: test   #本次访问的配置项
+      label: master   
+      uri: http://config-3344.com:3344  #本微服务启动后先去找3344号服务，通过SpringCloudConfig获取GitHub的服务地址
+                        #3344服务又是联通了githuhb仓库的服务，这样3355服务就可以通过3344服务读取到对应git仓库里面
+                        #指定的[master分支里面]的名称为 microservicecloud-config-client 的 yml 配置文件
+
+
+# application.yml 是用户级别的资源配置项
+# bootstrap.yml 是系统级别的，优先级更高
+ 
+

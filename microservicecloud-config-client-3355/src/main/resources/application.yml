@@ -1,0 +1,4 @@
+spring:
+  application:
+    name: microservicecloud-config-client   #表示的是这个客户端的名称，
+         #不一定跟bootstrap里面spring.cloud.config.name的值保持一致，因为两者的值是代表不一样的意思

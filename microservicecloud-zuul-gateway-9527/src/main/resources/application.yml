@@ -1,0 +1,33 @@
+server: 
+  port: 9527
+ 
+spring: 
+  application:
+    name: microservicecloud-zuul-gateway
+ 
+eureka: 
+  client: 
+    service-url: 
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka  
+  instance:
+    instance-id: gateway-9527.com
+    prefer-ip-address: true 
+ 
+#假如不使用zuul路由，那么可以使用 http://myzuul.com:9527/microservicecloud-dept/dept/get/1 访问对应服务下面的接口
+zuul: 
+  #ignored-services: microservicecloud-dept  #忽略掉真实的服务访问路由，因为添加了路由后，使用上面不用zuul路由下的访问方式也还可以正常访问
+                                      #忽略之后 http://myzuul.com:9527/microservicecloud-dept/dept/get/1 将不能再访问
+  ignored-services: "*"  #上面忽略服务的写法只能忽略某个，使用 * 号，则可以忽略所有
+  prefix: /wzm   #表示为访问路由统一加上一个前缀，这样只能使用 http://myzuul.com:9527/wzm/mydept/dept/get/1 才能访问
+  routes:
+    mydept.serviceId: microservicecloud-dept   #真实的服务名称
+    mydept.path: /mydept/**   #对外暴露的路由匹配规则，后面客户端可以使用
+          # http://myzuul.com:9527/mydept/dept/get/1 访问到真实服务下面的 /dept/get{id} 服务，其中 myzuul.com 在 host 里面进行了配置
+ 
+# 整合actuator监控信息
+info:
+  app.name: wzm-microservicecloud
+  company.name: www.wzm.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+

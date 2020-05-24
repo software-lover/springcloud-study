@@ -1,0 +1,47 @@
+server:
+  port: 8001
+
+# 与mybatis整合
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml     # mybatis配置文件所在路径
+  type-aliases-package: com.wzm.springcloud.entities     # 所有Entity别名类所在包
+  mapper-locations:
+    - classpath:mybatis/mapper/**/*.xml                  # mapper映射文件
+
+# 与spring整合
+spring:
+  application:
+    name: microservicecloud-dept
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource      # 当前数据源操作类型
+    driver-class-name: org.gjt.mm.mysql.Driver        # mysql驱动包
+    url: jdbc:mysql://localhost:3306/cloudDB01        # 数据库名称
+    username: root
+    password: root
+    dbcp2:
+      min-idle: 5                         # 数据库连接池的最小维持连接数
+      initial-size: 5                     # 初始化连接数
+      max-total: 5                        # 最大连接数
+      max-wait-millis: 200                # 等待连接获取的最大超时时间
+      test-while-idle: true               # 指明连接是否被空闲连接回收器(如果有)进行检验.如果检测失败,则连接将被从池中去除.
+      validation-query: SELECT 1          # 验证连接是否可用，使用的SQL语句
+      test-on-borrow: false               # 借出连接时不要测试，否则很影响性能
+      test-on-return: false               # 如果为true（默认false），当应用使用完连接，连接池回收连接的时候会判断该连接是否还可用
+
+# 整合eureka
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url:
+      #defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  # 提供者实例信息配置，完善actuator监控信息
+  instance:
+    instance-id: microservicecloud-provider-dept-hystrix-8001
+    prefer-ip-address: true     #注册的服务实例访问路径可以显示IP地址
+
+# 整合actuator监控信息
+info:
+  app.name: wzm-microservicecloud
+  company.name: www.wzm.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
